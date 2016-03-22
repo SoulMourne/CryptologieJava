@@ -27,4 +27,23 @@ public class Rsa
         int nouveauM = restexpmn(m, e, N);
         return nouveauM;
     }
+    
+        public static int dechiffrer1(int n, int p, int m, int e)
+    {
+        int N = n * p; 
+        int phiN = euler(N);
+        try {
+            int d = inverse(e, phiN);
+        } catch (Exception ex) {
+        System.err.println(ex.getMessage());        
+        }
+        int nouveauM = restexpmn(m, d, N);
+        return nouveauM;
+    }
+    
+    public static int dechiffrer2(int N, int m, int d)
+    {
+        int nouveauM = restexpmn(m, e, N);
+        return nouveauM;
+    }
 }
