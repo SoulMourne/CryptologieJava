@@ -32,8 +32,9 @@ public class Rsa
     {
         int N = n * p; 
         int phiN = euler(N);
+        int d = 0;
         try {
-            int d = inverse(e, phiN);
+            d = inverse(e, phiN);
         } catch (Exception ex) {
         System.err.println(ex.getMessage());        
         }
@@ -43,7 +44,7 @@ public class Rsa
     
     public static int dechiffrer2(int N, int m, int d)
     {
-        int nouveauM = restexpmn(m, e, N);
+        int nouveauM = restexpmn(m, d, N);
         return nouveauM;
     }
 }
