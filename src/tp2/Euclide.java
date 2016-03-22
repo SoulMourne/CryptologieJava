@@ -43,7 +43,7 @@ public class Euclide
         int resultat = p;
         int compteur = 1;
         int i = 1;
-        while (resultat != 1)
+        while (resultat > 1)
         {
             resultat = resultat/2;
             compteur = compteur * 2;
